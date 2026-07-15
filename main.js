@@ -141,6 +141,7 @@ const WHATSAPP_NUMBER = '212611227356';
 document.querySelectorAll('.btn-order').forEach(btn => {
     btn.addEventListener('click', function () {
         const productName = this.dataset.product || 'Lunaris Product';
+        const productPrice = this.dataset.price || '';
 
         const now = new Date();
         const orderTime = now.toLocaleString('en-GB', {
@@ -151,6 +152,7 @@ document.querySelectorAll('.btn-order').forEach(btn => {
         const message =
             `Hello, I would like to order this product:\n` +
             `Product: ${productName}\n` +
+            `Price: ${productPrice}\n` +
             `Time of order: ${orderTime}`;
 
         const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
