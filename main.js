@@ -1,5 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// ═══ Loading Screen ═══
+const loader = document.getElementById('loader');
+const loaderProgress = document.getElementById('loader-progress');
+const loaderText = document.getElementById('loader-text');
+
 // ═══ Hero Canvas Scroll Animation ═══
 const canvas = document.getElementById("hero-lightpass");
 const context = canvas.getContext("2d");
@@ -14,13 +19,31 @@ const airpods = {
   frame: 0
 };
 
+let loadedCount = 0;
+
 for (let i = 0; i < frameCount; i++) {
   const img = new Image();
+  img.onload = () => {
+    loadedCount++;
+    const pct = Math.round((loadedCount / frameCount) * 100);
+    if (loaderProgress) loaderProgress.style.width = pct + '%';
+    if (loaderText) loaderText.textContent = pct + '%';
+
+    // First frame loaded — draw it immediately
+    if (loadedCount === 1) render();
+
+    // All frames loaded — hide loader
+    if (loadedCount === frameCount) {
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        // Refresh ScrollTrigger after loader is gone
+        ScrollTrigger.refresh();
+      }, 300);
+    }
+  };
   img.src = currentFrame(i);
   images.push(img);
 }
-
-images[0].onload = render;
 
 gsap.to(airpods, {
   frame: frameCount - 1,
@@ -117,23 +140,19 @@ const WHATSAPP_NUMBER = '212611227356';
 
 document.querySelectorAll('.btn-order').forEach(btn => {
     btn.addEventListener('click', function () {
-        // Get product name from data attribute
         const productName = this.dataset.product || 'Lunaris Product';
 
-        // Format current date & time
         const now = new Date();
         const orderTime = now.toLocaleString('en-GB', {
             dateStyle: 'full',
             timeStyle: 'short'
         });
 
-        // Build the pre-filled message
         const message =
             `Hello, I would like to order this product:\n` +
             `Product: ${productName}\n` +
             `Time of order: ${orderTime}`;
 
-        // Open WhatsApp
         const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
         window.open(waURL, '_blank');
     });

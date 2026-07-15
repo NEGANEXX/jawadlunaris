@@ -27,6 +27,65 @@ body {
     overflow-x: hidden;
 }
 
+/* ═══ Loader ═══ */
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    height: 50px;
+    filter: invert(1);
+    margin-bottom: 2rem;
+    animation: loaderPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.loader-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-progress {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.15s ease;
+}
+
+.loader-text {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 /* ═══ Navbar ═══ */
 .navbar {
     position: fixed;
