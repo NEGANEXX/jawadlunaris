@@ -508,62 +508,71 @@ canvas {
 /* ═══ Responsive ═══ */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1.2rem;
     }
 
     .logo-img {
-        height: 32px;
+        height: 28px;
     }
 
     .nav-links {
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .nav-links a {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .section {
-        padding: 0 5vw;
+        padding: 0 4vw;
+        height: 80vh; /* Shorter heights on mobile so content doesn't feel overly spaced */
     }
 
-    .text-box h1 {
-        font-size: 2.5rem;
-    }
-
-    .text-box h2 {
-        font-size: 1.8rem;
-    }
-
-    .text-box.center h2 {
-        font-size: 2.5rem;
+    .step-4 {
+        height: 100vh;
     }
 
     .text-box {
-        padding: 2rem;
+        padding: 1.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .text-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .text-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-box.center h2 {
+        font-size: 2.2rem;
     }
 
     .products-section {
-        padding: 5rem 4vw 4rem;
+        padding: 4rem 4vw 3rem;
     }
 
     .products-header h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .products-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.8rem;
     }
 
     .contact-links {
         flex-direction: column;
         align-items: center;
+        gap: 1.2rem;
     }
 
     .contact-card {
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
+        padding: 1.8rem 2rem;
     }
 
     .footer-inner {
