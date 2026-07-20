@@ -1,11 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// ═══ Loading Screen ═══
 const loader = document.getElementById('loader');
 const loaderProgress = document.getElementById('loader-progress');
 const loaderText = document.getElementById('loader-text');
 
-// ═══ Hero Canvas Scroll Animation ═══
 const canvas = document.getElementById("hero-lightpass");
 const context = canvas.getContext("2d");
 
@@ -29,14 +27,11 @@ for (let i = 0; i < frameCount; i++) {
     if (loaderProgress) loaderProgress.style.width = pct + '%';
     if (loaderText) loaderText.textContent = pct + '%';
 
-    // First frame loaded — draw it immediately
     if (loadedCount === 1) render();
 
-    // All frames loaded — hide loader
     if (loadedCount === frameCount) {
       setTimeout(() => {
         loader.classList.add('hidden');
-        // Refresh ScrollTrigger after loader is gone
         ScrollTrigger.refresh();
       }, 300);
     }
@@ -77,7 +72,6 @@ function render() {
                       centerShift_x, centerShift_y, img.width * ratio, img.height * ratio); 
 }
 
-// ═══ GSAP: Fade in hero text boxes ═══
 const textBoxes = document.querySelectorAll(".text-box");
 textBoxes.forEach((box) => {
     gsap.to(box, {
@@ -93,7 +87,6 @@ textBoxes.forEach((box) => {
     });
 });
 
-// ═══ GSAP: Animate product cards on scroll ═══
 const productCards = document.querySelectorAll(".product-card");
 productCards.forEach((card, i) => {
     gsap.to(card, {
@@ -110,7 +103,6 @@ productCards.forEach((card, i) => {
     });
 });
 
-// ═══ GSAP: Animate contact cards ═══
 const contactCards = document.querySelectorAll(".contact-card");
 contactCards.forEach((card, i) => {
     gsap.fromTo(card, 
@@ -130,12 +122,10 @@ contactCards.forEach((card, i) => {
     );
 });
 
-// Update canvas on resize
 window.addEventListener("resize", () => {
     render();
 });
 
-// ═══ WhatsApp Order Integration ═══
 const WHATSAPP_NUMBER = '212611227356';
 
 document.querySelectorAll('.btn-order').forEach(btn => {

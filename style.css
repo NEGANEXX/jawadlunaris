@@ -27,7 +27,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ═══ Loader ═══ */
 .loader {
     position: fixed;
     inset: 0;
@@ -86,7 +85,6 @@ body {
     text-transform: uppercase;
 }
 
-/* ═══ Navbar ═══ */
 .navbar {
     position: fixed;
     top: 0;
@@ -150,7 +148,6 @@ body {
     transform: scale(1.15);
 }
 
-/* ═══ Canvas Container (Scroll Animation) ═══ */
 .canvas-container {
     position: fixed;
     top: 0;
@@ -171,7 +168,6 @@ canvas {
     filter: drop-shadow(0 0 30px rgba(201, 169, 110, 0.15));
 }
 
-/* ═══ Content (Hero Scroll Sections) ═══ */
 .content {
     position: relative;
     z-index: 2;
@@ -190,7 +186,6 @@ canvas {
 .step-3 { justify-content: flex-start; }
 .step-4 { justify-content: center; text-align: center; height: 120vh; }
 
-/* ═══ Glassmorphism Panels ═══ */
 .text-box {
     max-width: 500px;
     padding: 3rem;
@@ -258,7 +253,6 @@ canvas {
     50% { transform: translateY(12px); }
 }
 
-/* ═══ Products Section ═══ */
 .products-section {
     position: relative;
     z-index: 10;
@@ -304,7 +298,6 @@ canvas {
     text-transform: uppercase;
 }
 
-/* Product Grid */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -390,7 +383,6 @@ canvas {
     margin-left: 0.2rem;
 }
 
-/* WhatsApp Order Button */
 .btn-order {
     display: inline-flex;
     align-items: center;
@@ -423,7 +415,6 @@ canvas {
     flex-shrink: 0;
 }
 
-/* ═══ Contact Section ═══ */
 .contact-section {
     position: relative;
     z-index: 10;
@@ -508,7 +499,6 @@ canvas {
     font-size: 0.9rem;
 }
 
-/* ═══ Footer ═══ */
 .site-footer {
     position: relative;
     z-index: 10;
@@ -536,7 +526,6 @@ canvas {
     font-size: 0.85rem;
 }
 
-/* ═══ Responsive ═══ */
 @media (max-width: 768px) {
     .navbar {
         padding: 0.8rem 1.2rem;
