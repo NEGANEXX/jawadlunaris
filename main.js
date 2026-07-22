@@ -126,7 +126,7 @@ window.addEventListener("resize", () => {
     render();
 });
 
-const WHATSAPP_NUMBER = '212611227356';
+const WHATSAPP_NUMBER = '212699524921';
 
 document.querySelectorAll('.btn-order').forEach(btn => {
     btn.addEventListener('click', function () {
